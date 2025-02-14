@@ -1,30 +1,51 @@
 html {
     --section-background-color: linear-gradient(
       to bottom left,
-      rgba(17, 16, 16, 0.582),
-      rgba(12, 8, 24, 0.904)
+      rgba(10, 10, 20, 0.8),
+      rgba(5, 5, 15, 0.9)
     );
   
     --image-gradient: linear-gradient(
       to bottom left,
-      rgba(17, 16, 16, 0.678),
-      rgba(12, 10, 22, 0.863)
+      rgba(20, 20, 50, 0.75),
+      rgba(10, 10, 30, 0.9)
     );
   
-    --imp-text-color: #c770f0;
+    --imp-text-color: #8b5cf6; /* Professional soft purple */
   }
   
+  body {
+    background-color: #0a0a1a; /* Deep dark blue */
+    color: #c7d2fe; /* Soft text color */
+  }
+  
+  /* Important Text */
   .purple {
     color: var(--imp-text-color) !important;
+    font-weight: bold;
+  }
+  
+  /* Buttons */
+  button {
+    background-color: #1e1b4b; /* Deep Blue */
+    color: #c7d2fe; /* Soft White */
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease-in-out;
+    border: none;
+  }
+  
+  button:hover {
+    background-color: #312e81; /* Slightly lighter blue */
+    transform: scale(1.05);
   }
   
   button:focus {
-    box-shadow: none !important;
+    box-shadow: 0 0 8px rgba(139, 92, 246, 0.8);
   }
   
-  /* --------- */
-  /*  Preloader */
-  /* --------- */
+  /* Preloader */
   #preloader {
     position: fixed;
     top: 0;
@@ -32,7 +53,7 @@ html {
     width: 100%;
     height: 100%;
     z-index: 999999;
-    background-color: #0c0513;
+    background-color: #05051a;
     background-image: url(./Assets/pre.svg);
     background-repeat: no-repeat;
     background-position: center;
@@ -42,71 +63,44 @@ html {
     opacity: 0;
   }
   
-  #no-scroll {
-    overflow: hidden;
-    height: 100vh;
-  }
-  
-  /* --------- */
-  /*Scrollbar   */
-  /* --------- */
-  
+  /* Scrollbar */
   ::-webkit-scrollbar {
-    width: 7px;
+    width: 8px;
   }
   
-  /* Track */
   ::-webkit-scrollbar-track {
-    background: #2d1950;
+    background: #1a1a40;
   }
   
-  /* Handle */
   ::-webkit-scrollbar-thumb {
-    background: rgba(178, 121, 216, 0.959);
+    background: rgba(108, 99, 255, 0.9);
     border-radius: 12px;
   }
   
-  /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
-    background: rgba(222, 130, 235, 0.911);
-    border-radius: 12px;
+    background: rgba(139, 92, 246, 0.95);
   }
   
-  /* Home section */
+  /* Wave Animation */
   .wave {
-    animation-name: wave-animation; /* Refers to the name of your @keyframes element below */
-    animation-duration: 2.1s; /* Change to speed up or slow down */
-    animation-iteration-count: infinite; /* Never stop waving :) */
-    transform-origin: 70% 70%; /* Pivot around the bottom-left palm */
+    animation-name: wave-animation;
+    animation-duration: 2.1s;
+    animation-iteration-count: infinite;
+    transform-origin: 70% 70%;
     display: inline-block;
   }
   
   @keyframes wave-animation {
-    0% {
-      transform: rotate(0deg);
-    }
-    10% {
-      transform: rotate(14deg);
-    } /* The following five values can be played with to make the waving more or less extreme */
-    20% {
-      transform: rotate(-8deg);
-    }
-    30% {
-      transform: rotate(14deg);
-    }
-    40% {
-      transform: rotate(-4deg);
-    }
-    50% {
-      transform: rotate(10deg);
-    }
-    60% {
-      transform: rotate(0deg);
-    } /* Reset for the last half to pause */
-    100% {
-      transform: rotate(0deg);
-    }
+    0% { transform: rotate(0deg); }
+    10% { transform: rotate(14deg); }
+    20% { transform: rotate(-8deg); }
+    30% { transform: rotate(14deg); }
+    40% { transform: rotate(-4deg); }
+    50% { transform: rotate(10deg); }
+    60%, 100% { transform: rotate(0deg); }
   }
+  
+  /* Background Animation */
   #tsparticles {
     position: fixed !important;
     background-repeat: no-repeat !important;
@@ -115,14 +109,16 @@ html {
     height: 100%;
   }
   
+  /* Typewriter Effect */
   .Typewriter__wrapper {
     font-size: 2.2em !important;
-    color: #be6adf !important;
-    font-weight: 600 !important;
+    color: #8b5cf6 !important;
+    font-weight: 700 !important;
   }
+  
   .Typewriter__cursor {
     font-size: 2.4em !important;
-    color: #b562d6 !important;
+    color: #7c3aed !important;
   }
   
   @media (max-width: 767px) {
@@ -135,129 +131,35 @@ html {
       display: none !important;
     }
   }
-
-  /* --------- */
-  /* Resume */
-  /* --------- */
   
-  .resume-section {
-    position: relative !important;
-    padding-top: 110px !important;
-    padding-bottom: 30px !important;
-    background-image: var(--section-background-color) !important;
-    color: white !important;
-  }
-  
-  .resume {
-    padding-top: 50px;
-    padding-bottom: 50px;
-    justify-content: center;
-  }
-  
-  .resume-left {
-    padding-right: 80px !important;
-  }
-  
-  .resume-right {
-    padding-left: 80px !important;
-  }
-  
-  @media (max-width: 767px) {
-    .resume-left {
-      padding-right: 15px !important;
-      padding-left: 15px !important;
-    }
-  
-    .resume-right {
-      padding-right: 15px !important;
-      padding-left: 15px !important;
-    }
-  }
-  .resume .resume-title {
-    font-size: 2em;
-    font-weight: 700;
-    padding-top: 30px;
-    padding-bottom: 30px;
-  }
-  
-  .resume .resume-item {
-    padding: 0 0 10px 25px;
-    margin-top: -2px;
-    border-left: 2px solid #8a49a8;
-    position: relative;
-  }
-  
-  .resume .resume-item .resume-title {
-    line-height: 18px;
-    font-size: 0.9em;
-    background: #5234795d;
-    padding: 8px 15px;
-    display: inline-block;
-    font-weight: 600;
-    margin-bottom: 10px;
-  }
-  
-  .resume .resume-item ul {
-    padding-left: 20px;
-    text-align: justify;
-  }
-  
-  .resume .resume-item ul li {
-    padding-bottom: 10px;
-    list-style: none;
-  }
-  
-  .resume .resume-item:last-child {
-    padding-bottom: 0;
-  }
-  
-  .resume .resume-item::before {
-    content: "";
-    position: absolute;
-    width: 16px;
-    height: 16px;
-    border-radius: 50px;
-    left: -9px;
-    top: 0;
-    background: #fff;
-    border: 2px solid #8a49a8;
-  }
-  
-  .like-item {
-    padding-top: 10px !important;
-    font-size: 1.1em !important;
-    font-family: sans-serif !important;
-  }
-  
+  /* Like Button */
   .like-btn {
-    background-color: #934cce5e !important;
-    border-color: #934cce5e !important;
-    padding: 0.25rem 0.98rem !important;
-    border-radius: 5px !important;
-    line-height: 1.4 !important;
-    transition: 0.3s ease !important;
+    background-color: rgba(108, 99, 255, 0.6) !important;
+    border-color: rgba(108, 99, 255, 0.6) !important;
+    padding: 0.25rem 1rem !important;
+    border-radius: 6px !important;
+    transition: all 0.3s ease-in-out;
   }
   
   .like-btn:hover {
     transform: translateY(-2px) !important;
-    background-color: #a24dd386 !important;
-    border-color: #a24dd386 !important;
+    background-color: rgba(139, 92, 246, 0.9) !important;
+    border-color: rgba(139, 92, 246, 0.9) !important;
   }
   
+  /* Like Animation */
   .animate-like {
     animation-name: likeAnimation;
     animation-fill-mode: forwards;
     animation-duration: 0.85s;
   }
+  
   @keyframes likeAnimation {
-    0% {
-      transform: scale(1.5);
-    }
-    100% {
-      transform: scale(1);
-    }
+    0% { transform: scale(1.5); }
+    100% { transform: scale(1); }
   }
   
+  /* Fork Button */
   .fork-btn {
     font-size: 1.1em !important;
     padding-top: 10px !important;
@@ -265,17 +167,20 @@ html {
   
   .fork-btn-inner {
     line-height: 1.4em !important;
-    background-color: #934cce5e !important;
+    background-color: rgba(108, 99, 255, 0.6) !important;
     padding: 0.25rem 1.1rem !important;
     vertical-align: middle !important;
     text-align: center !important;
+    border-radius: 6px;
+    transition: all 0.3s ease-in-out;
   }
   
   .fork-btn-inner:hover {
     transform: translateY(-2px) !important;
-    background-color: #a24dd386 !important;
-    border-color: #a24dd386 !important;
+    background-color: rgba(139, 92, 246, 0.9) !important;
+    border-color: rgba(139, 92, 246, 0.9) !important;
   }
+  
   .fork-btn-inner::after {
     display: none !important;
   }

@@ -7,7 +7,7 @@ import todo from "../../assets/Projects/todo.jpg";
 
 function Projects() {
   return (
-    <div className="relative pt-36 pb-8 bg-gradient-to-b from-gray-900 to-black text-white" id="project">
+    <div className="relative pt-36 pb-8 bg-gradient-to-b from-gray-900 to-black text-white" id="projects">
       <div className="container mx-auto px-4">
         <h1 className="text-4xl font-semibold text-center mb-4">
           My Recent <strong className="text-purple-400">Works</strong>
