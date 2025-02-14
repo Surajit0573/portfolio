@@ -1,5 +1,5 @@
 import React from "react";
-import homeLogo from "../../Assets/home-main.svg";
+import homeLogo from "../../assets/home-main.svg";
 import Home2 from "./Home2";
 import Type from "./Type";
 
